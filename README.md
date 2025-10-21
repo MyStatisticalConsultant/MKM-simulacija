@@ -1,13 +1,14 @@
-# My Shiny App
+# Shiny aplikacija *Modela Konačne Mešavine* (Walter Mebane Jr.)
+## Izborna forenzika 
 
-This is a Shiny app that does XYZ.
+Shiny aplikacija omogućava nteraktivnu analizu izborne forenzike zasnovanu na mešavini tri beta-komponente (Bez prevare/Regular, Priraštaj prevare/Incremental fraud, Ekstremna prevara/Extreme fraud) i Gausovoj kopuli koja modelira vezu između izlaznosti (t) i udela glasova (v). Aplikacija simulira podatke, zatim u logit prostoru ocenjuje mešavinu multivarijacionih normalnih rasporeda (korišćenjem algoritma OM - Očekivanje-Maksimizacija) i nudi više vizuelizacija i kriterijuma kvaliteta..
 
-## How to Run
+## Kako koristiti ovu Shiny aplikaciju?
 
-- Clone the repo
-- Open `app.R` in RStudio
-- Click Run App
+- Klonirajte ovaj repozitorij
+- Otvorite `app.R` u RStudio
+- Kliknite na Run App
 
-## About
+## Online aplikacija
 
-This app was developed for ...
+Shiny aplikacija je moguće isprobati: https://statisticar-mkm-simulacija.share.connect.posit.cloud
