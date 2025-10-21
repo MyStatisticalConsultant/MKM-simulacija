@@ -11,4 +11,4 @@ Shiny aplikacija omogućava nteraktivnu analizu izborne forenzike zasnovanu na m
 
 ## Online aplikacija
 
-Shiny aplikacija je moguće isprobati: https://statisticar-mkm-simulacija.share.connect.posit.cloud
+Shiny aplikaciju je moguće isprobati: https://statisticar-mkm-simulacija.share.connect.posit.cloud
