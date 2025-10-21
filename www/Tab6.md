@@ -1,0 +1,30 @@
+## Čemu služe
+
+- **BIC**: bira broj komponenti kažnjavajući složenost (bolja
+  generalizacija).
+- **ICL**: dodatno kažnjava klasifikacionu neodlučnost (entropiju).
+
+## Kako čitati
+
+- **Minimum BIC/ICL** sugeriše dobar izbor *K*.
+- Ako ICL „kažnjava” dodatne komponente više nego BIC, podela je
+  verovatno „veštačka”.
+
+## Korišćenje
+
+- U levom panelu podesite **Max K**, zatim kliknite **Izračunaj
+  BIC/ICL**.
+- Računanje je **paralelizovano** (future.apply). Dugme **Zaustavi**
+  prekida objavu rezultata.
+
+------------------------------------------------------------------------
+
+#### R primer (ilustracija kriterijuma)
+
+    n <- 500; p <- 2; k <- 3
+    logL <- -1234.5
+    n_par <- (k - 1) + k * p + k * (p * (p + 1) / 2)
+    BIC <- -2 * logL + n_par * log(n)
+    BIC
+
+    ## [1] 2574.648

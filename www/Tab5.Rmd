@@ -1,0 +1,44 @@
+---
+title: "Parametri modela (π, μ, Σ)"
+author: "Zlatko Kovačić"
+date: "`r Sys.Date()`"
+output: md_document
+---
+
+## Prikazano
+
+- **Ponderi (π_k):** ocenjeni udeli grupa (Regular / Incremental / Extreme).
+- **Sredine (μ_k) u LOGIT prostoru:** vektori *[logit_t, logit_v]* po grupi.
+- **Kovarijacione matrice (Σ_k) u LOGIT prostoru:** varijanse/kovarijanse po grupi sa imenovanim osama.
+
+Ovi parametri su rezultat OM algoritma nad podacima u logit prostoru. Eliptični oblici grupa i njihove orijentacije odražene su u μ i Σ.
+
+## Ocene u ORIGINALNOM prostoru (t, v)
+
+Za lakše tumačenje, aplikacija izračunava i **sredine** i **kovarijacione matrice** po komponentama u **originalnom** prostoru (*t, v*), kao i **mešavinske** (globalne) momente:
+
+- **Sredine po komponentama:**  \(\mathbb{E}[t_k], \mathbb{E}[v_k]\)
+- **Kovarijacije po komponentama:**  \(\mathrm{Var}(t_k), \mathrm{Var}(v_k), \mathrm{Cov}(t_k, v_k)\)
+- **Mešavinski momenti:** \(\mathbb{E}[t], \mathbb{E}[v]\) i \(\mathrm{Cov}(t, v)\) pod ukupnom mešavinom
+
+> Napomena: originalni prostor dobijamo nelinearnom mapom *ilogit* nad logit-normalnim komponentama. Zatvorene forme za momente su retko dostupne, pa se koristi brza i robusna **Monte-Carlo** aproksimacija po komponenti.
+
+## Kako čitati
+
+- **Veliki π_Regular + mala Σ_Regular** u logit prostoru → dominira „normalan” obrazac; u originalnom prostoru očekujte umeren \(\mathbb{E}[t]\) i stabilna raspršenost.
+- **Prevare**: pomeren μ (ka većim logit vrednostima) i često veće Σ; u originalnom prostoru to vodi većoj \(\mathbb{E}[t]\), \(\mathbb{E}[v]\) i izraženijoj korelaciji \(\mathrm{Cov}(t, v)\).
+- **Mešavinski** (globalni) momenti u originalnom prostoru pomažu pri brzom poređenju sa agregatnim statistikama iz realnih podataka.
+
+---
+
+#### R skica (čitanje iz objekta)
+
+```r
+# Pretpostavimo da je 'res' EM rezultat:
+res$lambda         # ponderi (π)
+res$mu             # liste μ_k sa imenima c("logit_t","logit_v")
+res$sigma          # liste Σ_k sa imenovanim redovima/kolonama
+
+# Momenti u originalnom prostoru momenti se prikazuju i u posebnoj tabeli (Tab “Marginalni rasporedi”),
+# uključujući komponentne i mešavinske (globalne) vrednosti.
+```

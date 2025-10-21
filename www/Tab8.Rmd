@@ -1,0 +1,30 @@
+---
+title: "3D vizualizacija (logit_t, logit_v, posterior)"
+author: "Zlatko Kovačić"
+date: "`r Sys.Date()`"
+output:   
+  md_document:  
+    pandoc_args: ["--syntax-highlighting=none"]
+---
+
+## Šta gledate
+
+- **X:** logit(izlaznost), **Y:** logit(udeo glasova), **Z:** posterior za **Grupu3 (Extreme)**.
+- Boja: pripadnost OM grupi (Grupa1/Grupa2/Grupa3).
+
+## Kako čitati
+
+- „Greben” visokih posteriora nad delom oblaka → model je **siguran** da je to ta grupa.
+- Pljosnate površine bez vrhova → nesigurnost klasifikacije.
+
+> **Preuzmi HTML** čuva interaktivni 3D (PNG za plotly zahteva dodatne alate – dostupno na zahtev).
+
+---
+
+#### R primer (plotly 3D – ideja)
+
+```{r, echo = TRUE}
+# library(plotly)
+# plot_ly(df, x=~x, y=~y, z=~postK3, color=~cluster,
+#         type="scatter3d", mode="markers")
+```

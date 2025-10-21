@@ -1,0 +1,38 @@
+---
+title: "Originalni prostor"
+author: "Zlatko Kovačić"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Originalni prostor (t–v)
+
+**Šta gledate**  
+Raspored simuliranih biračkih mesta u **originalnom [0,1]×[0,1]** prostoru:
+
+- **X:** izlaznost (*t*)
+
+- **Y:** udeo glasova (*v*)
+
+- Boje: **istinite klase** (Regular, Incremental, Extreme)
+
+## Teorijska osnova
+
+- *t* i *v* po klasama potiču iz **Beta** rasporeda (fleksibilna asimetrija).
+
+- **Gausova kopula** uvodi korelaciju ρ → jačina veze *t–v* unutar klase.
+
+## Kako čitati grafik
+
+- **Regular:** bez „rogova“, umerena veza *t–v*.  
+- **Incremental:** oblak „izvučen” ka većem *t* i/ili *v* (jači ρ).  
+- **Extreme:** tačke pomerene ka **visokim** vrednostima oba indikatora (gornji desni ugao).
+
+## Forenzička relevantnost
+
+Neobični „kraci” ili zbijenosti pri veoma visokoj izlaznosti i udelu glasova mogu ukazivati na **ballot stuffing**.
+
+---
+
+#### R primeri (pregled)
+
