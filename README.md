@@ -117,7 +117,8 @@ Konzola će prikazati lokalni URL (npr. `http://127.0.0.1:xxxx`). Otvorite ga u 
 
 ## Navođenje izvora
 
-Ako koristite ovaj alat u istraživanjima, navedite radove **Waltera R. Mebanea, Jr.** o modelima konačne mešavine u forenzici izbora, kao i ovaj repozitorijum (sa commit-om ili oznakom izdanja).
+Ako koristite ovaj alat u istraživanjima, navedite radove **Waltera R. Mebanea, Jr.** o modelima 
+konačne mešavine u forenzici izbora, kao i ovaj repozitorijum (sa commit-om ili oznakom izdanja).
 
 ## Povratne informacije i prijava problema
 
@@ -129,6 +130,11 @@ Molimo priložite:
 - kratak opis izabranih parametara,
 - broj simuliranih biračkih mesta,
 - i snimak ekrana ili izvezeni CSV ako prijavljujete grešku.
+
+## Zahvalnost 
+
+- **Walter R. Mebane, Jr.** za inicijalni rad na **modelima konačne mešavine** u forenzici izbora.
+- Saradnicima i zajednici otvorenog koda čiji paketi pokreću ovu aplikaciju.
 
 ## Licenca
 
